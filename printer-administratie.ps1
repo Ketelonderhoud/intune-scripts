@@ -11,10 +11,10 @@ Invoke-WebRequest -Uri "https://dl.develop.eu/nl/?tx_kmanacondaimport_downloadpr
 #Start-Process msiexec.exe -Wait -ArgumentList '/I C:\temp\7z1900-x64.msi /quiet /norestart'
 
 #Unzip file
-cmd /c "C:\Progra~1\7-Zip\7z.exe x c:\temp\GEUPDPCL6Win_3500MU.zip -oc:\temp\ -r"
+cmd /c "C:\Progra~1\7-Zip\7z.exe x c:\temp\GEUPDPCL6Win_3500MU.zip -oc:\temp -r"
 
 #Add printer driver
-Invoke-Command {pnputil.exe -a "C:\temp\GEUPDPCL6Win_3500MU\driver\win_x64\KOBS8JA_.inf" }
+Invoke-Command {pnputil.exe -a "C:\temp\GEUPDPCL6Win_3500MU\GEUPDPCL6Win_3500MU\driver\win_x64\KOBS8JA_.inf" }
 Add-PrinterDriver -Name "Generic Universal PCL"
 Start-Sleep 3
 }
